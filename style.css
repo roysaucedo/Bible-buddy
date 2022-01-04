@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+}
+
+/* FONTS */
+
+
+body {
+    background-color: #0A0A0A;
+    font-family: soleil, sans-serif;
+    color: white;
+    font-weight: 300;
+}
+
+
+h1 {
+    font-family: soleil, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+    
+
+}
+
+h2 {
+    font-family: soleil, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 100;
+    letter-spacing: 2px;
+
+
+}
+
+h3 {
+    font-family: soleil, sans-serif;
+    font-size: .8rem;
+    font-weight: 300;
+    letter-spacing: 3px;
+}
+
+p {
+    font-family: soleil, sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+a {
+    text-decoration: none;
+    color: #000000;
+    font-family: soleil, sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    background-color: rgb(153, 179, 173);
+    padding: 18px 100px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+
+}
+
+.hero {
+    background-image: url("img/bg.jpg");
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 10px;
+}
+
+.hero>img{
+    width: 60vw;
+    padding: 40px;
+}
+
+.section-1 {
+    background-image: url("img/bg2.png");
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 60px 10px;
+}
+
+.section-1>p {
+    padding: 40px 15px;
+    line-height: 150%;
+    font-size: 1.5rem;
+    font-weight: 300;
+    letter-spacing: 0.1rem;
+}
