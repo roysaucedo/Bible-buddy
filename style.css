@@ -82,6 +82,10 @@ footer {
 
 .hero {
     text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
     margin: 0px 20px;
     border-radius: 10px;
     background:linear-gradient(0deg, rgba(8, 8, 8, 0.5), rgba(23, 73, 54, 0.5)), url(/img/bible-img.jpg);
