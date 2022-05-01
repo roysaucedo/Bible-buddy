@@ -95,6 +95,7 @@ footer {
     background:linear-gradient(0deg, rgba(8, 8, 8, 0.5), rgba(23, 73, 54, 0.5)), url(/img/bible-img.jpg);
     background-size: cover;
     background-position: center;
+    padding: 10px;
 
 }
 
@@ -135,12 +136,16 @@ footer {
 
 .content-div {
     width: 300px;
-    margin: 0px 10px;
+    margin: 10px 0px 20px 0px;
     
 }
 
 .content-wrapper {
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 
 }
 
