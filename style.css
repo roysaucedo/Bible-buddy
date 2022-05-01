@@ -10,6 +10,8 @@ body {
     font-family: soleil, sans-serif;
     color: white;
     font-weight: 300;
+    max-width: 1200px;
+    margin: auto;
 }
 
 
@@ -144,9 +146,29 @@ footer {
 
 .nav>h1 {
     margin-bottom: 20px;
-
 }
 
 .back-div>a {
     color: white;
+}
+
+.nav>a {
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+}
+
+.card>img {
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.description {
+    padding: 60px 20px 0px 20px;
+}
+
+.description>p {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    padding-top: 20px;
 }
