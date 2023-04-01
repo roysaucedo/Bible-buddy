@@ -12,14 +12,43 @@
     <link href="/dist/output.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="text-center py-4 text-xl font-bold shadow-md lg:text-3xl">
+    <nav x-data="{ open: false }" class="text-center py-4 text-xl font-bold shadow-md lg:text-3xl relative z-10">
       <div class="max-w-6xl px-8 flex justify-between items-center mx-auto">
         <a href="https://www.biblebuddy.co/">
           <h2 class="text-red-400">Bible Buddy 👋</h2></a>
-          <p class="text-gray-400 text-sm font-medium" id="visitor-count">Loading...</p>
+          <button 
+            @click="open = true"
+            class="p-2 text-black rounded-lg text-base font-normal">Contact →</button>
+          <!-- <p class="text-gray-400 text-sm font-medium" id="visitor-count">Loading...</p> -->
       </div>
-     
-    </nav>
+      <!-- MODAL -->
+    <div 
+    x-show.transition.duration.500ms="open"
+    x-show="open"
+    class="fixed inset-0 bg-white bg-opacity-75 z-50">
+
+    <div 
+      @click.away="open = false"
+      class="mx-4 mt-10 md:mx-auto max-w-2xl bg-white border-2 p-8 text-center rounded-xl shadow-xl">
+      <h2 class="text-2xl font-semibold">Want to get involved or share an idea?</h2>
+      <p class="mt-4 font-normal text-base">Send a brief email to <strong>roy@saucestudios.co</strong></p>
+      <div x-data="{ copied: false }">
+        <button
+          class="mt-6 px-4 py-2 bg-black text-white rounded-lg font-normal text-base hover:bg-blue-200 hover:text-black focus:outline-none focus:ring-2 focus:ring focus:ring-black"
+          x-on:click.prevent="navigator.clipboard.writeText('roy@saucestudios.co'); copied = true; setTimeout(() => copied = false, 1000)"
+        >
+          <span x-show="!copied">Copy Email</span>
+          <span x-show="copied">Copied!</span>
+        </button>
+        <button 
+        @click="open = false"
+        class="mt-6 px-4 py-2 border-2 text-black rounded-lg font-normal text-base">Close</button>
+      </div>
+      
+
+    </div>
+  </div>
+  </nav>
 
     <section class="py-10 flex justify-center items-center flex-col text-center px-4 lg:py-20">
           <h1 class="text-4xl font-bold mb-8 lg:text-5xl lg:leading-normal">All Resources</h1>
