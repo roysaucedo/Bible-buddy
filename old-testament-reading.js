@@ -4,6 +4,24 @@ const readingsContainer = document.getElementById("readingsContainer");
 fetch("/json-data/old-testament/old-testament-data.json")
   .then((response) => response.json())
   .then((data) => {
+    // Today Reading
+    // get current month and day
+    const today = new Date();
+    const currentMonth = today.toLocaleString('default', { month: 'long' });
+    const currentDay = today.getDate();
+
+
+    // find the object for the current month
+    const currentMonthObj = data.find(obj => obj.month === currentMonth);
+    console.log(currentMonthObj)
+    // find the reading of the day
+    const reading = currentMonthObj.reading[currentDay - 1];
+
+    // Get reading p tag
+    const todaysReading = document.getElementById('today-reading');
+    console.log(todaysReading)
+    todaysReading.textContent = reading;
+    
     // Loop through the months in the JSON data
     for(let i=0; i<data.length; i++){
         const monthData = data[i];
