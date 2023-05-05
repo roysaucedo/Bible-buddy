@@ -1,71 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <title>Bible Buddy | Free Resources for Christians</title>
-    <link rel="icon" type="image/x-icon" href="/img/prayer-hands.png">
-    <link href="/dist/output.css" rel="stylesheet">
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
-  </head>
-  <body>
-    
-    <nav x-data="{ open: false }" class="text-center py-4 text-xl font-bold shadow-md lg:text-3xl relative z-10">
-      <div class="max-w-6xl px-8 flex justify-between items-center mx-auto">
-        <a href="https://www.biblebuddy.co/">
-          <h2 class="text-red-400">Bible Buddy 👋</h2></a>
-          <button 
-            @click="open = true"
-            class="p-2 text-black rounded-lg text-base font-normal">Contact →</button>
-          <!-- <p class="text-gray-400 text-sm font-medium" id="visitor-count">Loading...</p> -->
-      </div>
-      <!-- MODAL -->
-    <div 
-    x-show.transition.duration.500ms="open"
-    x-show="open"
-    class="fixed inset-0 bg-white bg-opacity-75 z-50">
 
-    <div 
-      @click.away="open = false"
-      class="mx-4 mt-10 md:mx-auto max-w-2xl bg-white border-2 p-8 text-center rounded-xl shadow-xl">
-      <h2 class="text-2xl font-semibold">Want to get involved or share an idea?</h2>
-      <p class="mt-4 font-normal text-base">Send a brief email to <strong>roy@saucestudios.co</strong></p>
-      <div x-data="{ copied: false }">
-        <button
-          class="mt-6 px-4 py-2 bg-black text-white rounded-lg font-normal text-base hover:bg-blue-200 hover:text-black focus:outline-none focus:ring-2 focus:ring focus:ring-black"
-          x-on:click.prevent="navigator.clipboard.writeText('roy@saucestudios.co'); copied = true; setTimeout(() => copied = false, 1000)"
-        >
-          <span x-show="!copied">Copy Email</span>
-          <span x-show="copied">Copied!</span>
-        </button>
-        <button 
-        @click="open = false"
-        class="mt-6 px-4 py-2 border-2 text-black rounded-lg font-normal text-base">Close</button>
-      </div>
-      
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <title>Bible Buddy | Free Resources for Christians</title>
+  <link rel="icon" type="image/x-icon" href="/img/prayer-hands.png">
+  <link href="/dist/output.css" rel="stylesheet">
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.0/dist/cdn.min.js"></script>
+</head>
 
+<body>
+
+  <nav x-data="{ open: false }" class="text-center py-4 text-xl font-bold shadow-md lg:text-3xl relative z-10">
+    <div class="max-w-6xl px-8 flex justify-between items-center mx-auto">
+      <a href="https://www.biblebuddy.co/">
+        <h2 class="text-red-400">Bible Buddy 👋</h2>
+      </a>
+      <button @click="open = true" class="p-2 text-black rounded-lg text-base font-normal">Contact →</button>
+      <!-- <p class="text-gray-400 text-sm font-medium" id="visitor-count">Loading...</p> -->
     </div>
-  </div>
+    <!-- MODAL -->
+    <div x-show.transition.duration.500ms="open" x-show="open" class="fixed inset-0 bg-white bg-opacity-75 z-50">
+
+      <div @click.away="open = false"
+        class="mx-4 mt-10 md:mx-auto max-w-2xl bg-white border-2 p-8 text-center rounded-xl shadow-xl">
+        <h2 class="text-2xl font-semibold">Want to get involved or share an idea?</h2>
+        <p class="mt-4 font-normal text-base">Send a brief email to <strong>roy@saucestudios.co</strong></p>
+        <div x-data="{ copied: false }">
+          <button
+            class="mt-6 px-4 py-2 bg-black text-white rounded-lg font-normal text-base hover:bg-blue-200 hover:text-black focus:outline-none focus:ring-2 focus:ring focus:ring-black"
+            x-on:click.prevent="navigator.clipboard.writeText('roy@saucestudios.co'); copied = true; setTimeout(() => copied = false, 1000)">
+            <span x-show="!copied">Copy Email</span>
+            <span x-show="copied">Copied!</span>
+          </button>
+          <button @click="open = false"
+            class="mt-6 px-4 py-2 border-2 text-black rounded-lg font-normal text-base">Close</button>
+        </div>
+
+
+      </div>
+    </div>
   </nav>
-    
 
 
-    <section class="py-10 flex justify-center items-center flex-col text-center px-4 lg:py-20">
-          <h1 class="text-4xl font-bold mb-8 lg:text-5xl lg:leading-normal">An Easy Way To Organize Your Bible Reading.</h1>
-        <p class="mb-10 text-lg lg:text-xl lg:leading-normal">Bible Buddy is community built project that creates free resources to help you grow your relationship with God.</p>
-       <a class="bg-black p-4 text-white rounded-lg" href="/pages/resources">View All Resources →</a>
-      
-    </section>
 
-    <section class="py-10 flex justify-center items-center flex-col text-center px-4">
-      <h2 class="text-2xl font-bold mb-6 lg:text-4xl">Reading Plan & Grow Journal</h2>
-      <p class="mb-10 text-lg">Simply duplicate the template into your Notion account and make it your own.</p>
-      <div class="flex gap-6 justify-center flex-wrap flex-col lg:flex-row">
-        <!-- CARD -->
+  <section class="py-10 flex justify-center items-center flex-col text-center px-4 lg:py-20">
+    <h1 class="text-4xl font-bold mb-8 lg:text-5xl lg:leading-normal">An Easy Way To Organize Your Bible Reading.</h1>
+    <p class="mb-10 text-lg lg:text-xl lg:leading-normal">Bible Buddy is community built project that creates free
+      resources to help you grow your relationship with God.</p>
+    <a class="bg-black p-4 text-white rounded-lg" href="/pages/resources">View All Resources →</a>
+
+  </section>
+
+  <section class="py-10 flex justify-center items-center flex-col text-center px-4">
+    <h2 class="text-2xl font-bold mb-6 lg:text-4xl">Reading Plan & Grow Journal</h2>
+    <p class="mb-10 text-lg">Simply duplicate the template into your Notion account and make it your own.</p>
+    <div class="flex gap-6 justify-center flex-wrap flex-col lg:flex-row">
+      <!-- CARD -->
       <div class="p-6 bg-blue-50 rounded-lg mb-6 max-w-md shadow-lg">
         <div class="mb-4 flex">
           <div class="rounded-full py-1 px-4 bg-blue-200">
@@ -73,7 +70,8 @@
           </div>
         </div>
         <h2 class="text-2xl font-bold mb-6">Choose a reading plan.</h2>
-        <p class="mb-2 text-lg h-28">Each day of the year has an assigned passage. Never stress out over what chapter to read.</p>
+        <p class="mb-2 text-lg h-28">Each day of the year has an assigned passage. Never stress out over what chapter to
+          read.</p>
         <div class="flex gap-4 justify-center mb-4">
           <a class="font-semibold" href="./pages/old-testament.html">Old Testament →</a>
           <a class="font-semibold" href="./pages/new-testament.html">New Testament →</a>
@@ -88,13 +86,16 @@
           </div>
         </div>
         <h2 class="text-2xl font-bold mb-6">Start your daily Grow Journal.</h2>
-        <p class="mb-2 text-lg h-28">Track the verses that speak to you and answer simple questions about how to apply what you learn in your daily life.</p>
+        <p class="mb-2 text-lg h-28">Track the verses that speak to you and answer simple questions about how to apply
+          what you learn in your daily life.</p>
         <div class="mb-4">
-          <a class="font-semibold" href="https://roysaucedo.notion.site/3b50e6795e2746e7a265bcd831360b39?v=c4ea1e1707394bf7a07e11538ccb175a">View the Grow Journal →</a>
+          <a class="font-semibold"
+            href="https://roysaucedo.notion.site/3b50e6795e2746e7a265bcd831360b39?v=c4ea1e1707394bf7a07e11538ccb175a">View
+            the Grow Journal →</a>
         </div>
       </div>
-      <!-- CARD -->
-      <div class="p-6 bg-red-50 rounded-lg mb-6 max-w-md shadow-lg">
+      <!-- COMMUNITY CARD -->
+      <!-- <div class="p-6 bg-red-50 rounded-lg mb-6 max-w-md shadow-lg">
         <div class="mb-4 flex">
           <div class="rounded-full py-1 px-4 bg-red-200">
             Community
@@ -106,25 +107,27 @@
           <a class="font-semibold" href="">Join Now →</a>
         </div>
         
-      </div>
+      </div> -->
 
-      </div>
-      
-      
-    </section>
-
-    <section class="py-4 flex justify-center items-center flex-col text-center px-4">
-      <h2 class="text-2xl font-bold mb-6 lg:text-4xl">Need Help Getting Started?</h2>
-      <p class="mb-10 text-lg">Watch this short video tutorial. It goes over how to duplicate the templates and add to your Notion account.</p>
-
-      
-    </section>
+    </div>
 
 
+  </section>
 
-    <footer class="text-center py-10 text-sm">
-      <p>Powered by Mom's frijoles ❤️</p>
-    </footer>
-    <script src="visitorCount.js"></script>
-  </body>
+  <section class="py-4 flex justify-center items-center flex-col text-center px-4">
+    <h2 class="text-2xl font-bold mb-6 lg:text-4xl">Need Help Getting Started?</h2>
+    <p class="mb-10 text-lg">Watch this short video tutorial. It goes over how to duplicate the templates and add to
+      your Notion account.</p>
+
+
+  </section>
+
+
+
+  <footer class="text-center py-10 text-sm">
+    <p>Powered by Mom's frijoles ❤️</p>
+  </footer>
+  <script src="visitorCount.js"></script>
+</body>
+
 </html>
